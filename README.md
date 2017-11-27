@@ -7,7 +7,7 @@ Refer to the [overview](/src/Docs/overview.md) for more information.
 
 ## Team ##
 
-We thank the following contributor(s): **Taavi Kõosaar**.
+We thank the following contributor(s): **Taavi Kõosaar** and **Mathias Olausson**.
 
 ## Contributions are welcome ##
 
