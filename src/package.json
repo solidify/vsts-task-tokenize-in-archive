@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "tfx-cli": "^0.3.28"
+  },
+  "name": "tokenize-in-archive",
+  "private": true,
+  "version": "1.0.0"
+}

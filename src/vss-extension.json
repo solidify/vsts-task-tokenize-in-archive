@@ -1,0 +1,78 @@
+{
+  "manifestVersion": 1,
+  "id": "tokenize-in-archive",
+  "version": "1.0.0",
+  "name": "Tokenize in Archive Task",
+  "description": "This task lets you do tokenization of items within an archive file (e.g. .zip file).",
+  "helpMarkDown": "[More Information](https://github.com/solidify/vsts-task-tokenize-in-archive)",
+  "publisher": "Solidify Labs",
+  "public": false,
+  "icons": {
+    "default": "img/extension-icon.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "Tokenization",
+    "Archive",
+    "Deploy",
+    "Release"
+  ],
+  "content": {
+    "license": {
+      "path": "Docs/LICENSE.md"
+    },
+    "details": {
+      "path": "Docs/overview.md"
+    }
+  },
+ "links": {
+    "home": {
+      "uri": "https://github.com/solidify/vsts-task-tokenize-in-archive"
+    },
+    "getstarted": {
+      "uri": "https://github.com/solidify/vsts-task-tokenize-in-archive"
+    },
+    "learn": {
+      "uri": "https://github.com/solidify/vsts-task-tokenize-in-archive"
+    },
+    "support": {
+      "uri": "https://github.com/solidify/vsts-task-tokenize-in-archive/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/solidify/vsts-task-tokenize-in-archive"
+  },
+  "branding": {
+    "color": "rgb(0, 0, 0)",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "TokenizeInArchiveTask"
+    },
+		{
+      "path": "img/configure-task.png",
+      "addressable": true
+		}
+  ],
+  "categories": [
+    "Build and release"
+  ],
+  "contributions": [
+    {
+      "id": "Tokenize-In-Archive-Task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "TokenizeInArchiveTask"
+      }
+    }
+  ]
+}
