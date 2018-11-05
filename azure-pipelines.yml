@@ -5,8 +5,8 @@ queue:
   demands: npm
 
 variables:
-  major: 0
-  minor: 2
+  major: 1
+  minor: 1
   Extension.OutputPath
 
 name: $(major).$(minor)$(rev:.r)
