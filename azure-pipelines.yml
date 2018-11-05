@@ -1,0 +1,27 @@
+resources:
+- repo: self
+queue:
+  name: Hosted
+  demands: npm
+
+variables:
+  major: 0
+  minor: 2
+  Extension.OutputPath
+
+name: $(major).$(minor)$(rev:.r)
+
+steps:
+- task: ms-devlabs.vsts-developer-tools-build-tasks.package-extension-build-task.PackageVSTSExtension@1
+  displayName: 'Package Extension: src'
+  inputs:
+    rootFolder: src
+    outputPath: 'vsts-task-tokenize-in-archive-$(Build.BuildNumber).vsix'
+    extensionVersion: '$(Build.BuildNumber)'
+    updateTasksVersion: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: 'vsts-task-tokenize-in-archive-$(Build.BuildNumber).vsix'
+    
