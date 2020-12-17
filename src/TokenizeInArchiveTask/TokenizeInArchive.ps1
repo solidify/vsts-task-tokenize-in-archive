@@ -11,7 +11,7 @@ try {
     $Prefix = Get-VstsInput -Name Prefix
     $Suffix = Get-VstsInput -Name Suffix
     $ReplaceWithEmpty = Get-VstsInput -Name ReplaceWithEmpty
-
+    $isWindows = (Get-ChildItem -Path Env: | ? { $_.name -eq "OS" }).value  -eq "Windows_NT"
     Write-Verbose "PathToArchives = $PathToArchives" -Verbose
     Write-Verbose "Packages = $Packages" -Verbose
     Write-Verbose "FilesToTokenize = $FilesToTokenize" -Verbose
@@ -20,7 +20,11 @@ try {
     Write-Verbose "ReplaceWithEmpty = $ReplaceWithEmpty" -Verbose
 
     # Dont think we should do this anymore
-    Import-Module -Name "$PSScriptRoot\ps_modules\VstsTaskSdk\VstsTaskSdk.psm1"
+    if( $isWindows -eq $true ){
+    	Import-Module -Name "$PSScriptRoot\ps_modules\VstsTaskSdk\VstsTaskSdk.psm1"
+    } else {
+	Import-Module -Name "$PSScriptRoot/ps_modules/VstsTaskSdk/VstsTaskSdk.psm1"
+    }
     #Import-Module "Microsoft.TeamFoundation.DistributedTask.Task.Internal"
     #Import-Module "Microsoft.TeamFoundation.DistributedTask.Task.Common"
 
