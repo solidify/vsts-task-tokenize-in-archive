@@ -17,10 +17,10 @@ steps:
     
 - task: PackageAzureDevOpsExtension@3
   inputs:
-    rootFolder: 
-    updateTasksVersion: true
+    rootFolder: 'src'
     outputPath: 'vsts-task-tokenize-in-archive-$(Build.BuildNumber).vsix'
     extensionVersion: '$(Build.BuildNumber)'
+    updateTasksVersion: true
 
 
 - task: PublishBuildArtifacts@1
