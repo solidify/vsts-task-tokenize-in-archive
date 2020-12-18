@@ -14,13 +14,14 @@ steps:
 - task: TfxInstaller@3
   inputs:
     version: 'v0.8.3'
-- task: ms-devlabs.vsts-developer-tools-build-tasks.package-extension-build-task.PackageVSTSExtension@1
-  displayName: 'Package Extension: src'
+    
+- task: PackageAzureDevOpsExtension@3
   inputs:
-    rootFolder: src
+    rootFolder: 
+    updateTasksVersion: true
     outputPath: 'vsts-task-tokenize-in-archive-$(Build.BuildNumber).vsix'
     extensionVersion: '$(Build.BuildNumber)'
-    updateTasksVersion: true
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
